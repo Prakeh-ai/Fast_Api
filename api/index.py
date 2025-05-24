@@ -1,7 +1,17 @@
 from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
 import json
 
 app = FastAPI()
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all origins
+    allow_methods=["GET"],  # Only allow GET requests
+    allow_headers=["*"],  # Allow all headers
+)
+
 
 # Load data at startup (optional optimization)
 with open('api/data.json', 'r') as f:
