@@ -4,7 +4,7 @@ import json
 app = FastAPI()
 
 # Load data at startup (optional optimization)
-with open('data.json', 'r') as f:
+with open('api/data.json', 'r') as f:
     data = json.load(f)
 marks_map = {item['name']: item['marks'] for item in data}
 
