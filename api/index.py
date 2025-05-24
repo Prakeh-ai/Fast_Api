@@ -14,4 +14,4 @@ async def get_marks(request: Request):
     query_params = request.query_params.getlist('name')
     marks = [marks_map.get(name, None) for name in query_params]
     datareturn = { 'marks': marks }
-    return json.dumps(datareturn)
+    return datareturn
